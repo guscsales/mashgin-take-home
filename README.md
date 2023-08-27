@@ -43,3 +43,7 @@ pnpm serve:app # terminal 3
 
 You will see the **services** running on `http://localhost:3000`.
 You will see the **web app** running on `http://localhost:4200`.
+
+## Task progress
+
+You can check all my tasks and progress on this Notion page: https://guscsales.notion.site/Mashgin-Take-Home-Tasks-554cb5eece03484c944bec55cf15a1a4?pvs=4
