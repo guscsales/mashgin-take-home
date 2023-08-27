@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mashgin-take-home-gustavo/database": ["database/src/index.ts"],
+      "@mashgin-take-home-gustavo/database-schema": [
+        "database-schema/src/index.ts"
+      ],
+      "@mashgin-take-home-gustavo/prisma": ["prisma/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
