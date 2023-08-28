@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sans.variable}`}>
         <Header />
-        <main>{children}</main>
+        <main className="mt-24">{children}</main>
         <Footer />
       </body>
     </html>

@@ -47,7 +47,7 @@ export default function FoodCard({ food }: Props) {
         </div>
       </CardContent>
       <CardFooter>
-        <FoodCardFooter />
+        <FoodCardFooter food={food} />
       </CardFooter>
     </Card>
   );

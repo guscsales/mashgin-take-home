@@ -4,8 +4,6 @@ import FoodCard from './food-card';
 export default async function ListFoodsCards() {
   const foods = await FoodsService.search();
 
-  console.log(foods);
-
   return (
     <div className="grid sm:grid-cols-3 gap-3">
       {foods.map((food) => (

@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { set, isAfter, isEqual } from 'date-fns';
 
 export const saveCheckoutOnQueueValidator = z.object({
-  foods: z.array(z.object({ id: z.number() })),
+  foods: z.array(z.object({ id: z.number(), quantity: z.number() })),
   name: z.string(),
   email: z.string().email({ message: 'Invalid email' }),
   card: z.object({

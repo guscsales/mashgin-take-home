@@ -9,6 +9,7 @@ enum CheckoutStatuses {
 interface SaveCheckoutOnQueueRequest {
   foods: {
     id: Food['id'];
+    quantity: number;
   }[];
   name: string;
   email: string;
