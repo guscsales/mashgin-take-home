@@ -1,6 +1,7 @@
 import './global.scss';
 import { League_Spartan } from 'next/font/google';
-import Header from '../libs/components/header';
+import Header from '@web/libs/components/header';
+import Footer from '@web/libs/components/footer';
 
 const sans = League_Spartan({
   variable: '--font-sans',
@@ -21,7 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sans.variable}`}>
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
