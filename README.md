@@ -1,6 +1,6 @@
 # Mashgin Take Home - Gustavo
 
-This project is using NX. What you need to have on your machine:
+This project is using NX, NestJS, NextJS, TailwindCSS, ShadcnUI and more. What you need to have on your machine:
 
 - NodeJS 18+
 - Docker
