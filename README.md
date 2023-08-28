@@ -44,6 +44,18 @@ pnpm serve:app # terminal 3
 You will see the **services** running on `http://localhost:3000`.
 You will see the **web app** running on `http://localhost:4200`.
 
+## Testing
+
+I didn't have time to cover all the places, but I created a few tests, you can run by running the following.
+
+```bash
+pnpm test:app
+```
+
+## Postman
+
+There is a postman collection, so you may import and test the endpoints not using only the UI.
+
 ## Task progress
 
 You can check all my tasks and progress on this Notion page: https://guscsales.notion.site/Mashgin-Take-Home-Tasks-554cb5eece03484c944bec55cf15a1a4?pvs=4
