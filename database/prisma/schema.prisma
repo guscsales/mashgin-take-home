@@ -27,5 +27,36 @@ model Food {
   category   Category @relation(fields: [categoryId], references: [id])
   categoryId Int
 
+  paymentItems PaymentItem[]
+
   @@map("foods")
+}
+
+model Payment {
+  id String @id @default(uuid())
+
+  name       String
+  email      String
+  cardNumber String
+  exp        String
+  cvc        String
+
+  createdAt DateTime @default(now())
+
+  paymentItems PaymentItem[]
+
+  @@map("payments")
+}
+
+model PaymentItem {
+  id       String @id @default(uuid())
+  quantity Int
+
+  Food   Food @relation(fields: [foodId], references: [id])
+  foodId Int
+
+  Payment   Payment? @relation(fields: [paymentId], references: [id])
+  paymentId String?
+
+  @@map("payments_items")
 }

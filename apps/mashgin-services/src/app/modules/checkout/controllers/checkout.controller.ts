@@ -10,8 +10,6 @@ export class CheckoutController {
   @Post('/')
   @SchemaValidator(saveCheckoutOnQueueValidator)
   async searchFoods(@Body() payload) {
-    const data = await this.checkoutService.saveCheckoutOnQueue(payload);
-
-    return data;
+    await this.checkoutService.doPayment(payload);
   }
 }

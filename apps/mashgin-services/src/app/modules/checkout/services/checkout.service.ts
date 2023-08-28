@@ -1,12 +1,13 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Food } from '@prisma/client';
+import { DatabaseService } from '../../shared/database/database.service';
 
 enum CheckoutStatuses {
   InAnalysis = 'in_analysis',
   Done = 'done',
 }
 
-interface SaveCheckoutOnQueueRequest {
+interface DoPaymentRequest {
   foods: {
     id: Food['id'];
     quantity: number;
@@ -24,11 +25,25 @@ interface SaveCheckoutOnQueueRequest {
 export class CheckoutService {
   private readonly logger = new Logger(CheckoutService.name);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async saveCheckoutOnQueue(payload: SaveCheckoutOnQueueRequest) {
-    // TODO: send to SQS
-    return {
-      status: CheckoutStatuses.InAnalysis,
-    };
+  constructor(private databaseService: DatabaseService) {}
+
+  async doPayment({ foods, card, email, name }: DoPaymentRequest) {
+    await this.databaseService.payment.create({
+      data: {
+        name,
+        email,
+        cardNumber: card.number,
+        exp: card.exp,
+        cvc: card.cvc,
+        paymentItems: {
+          createMany: {
+            data: foods.map((item) => ({
+              foodId: item.id,
+              quantity: item.quantity,
+            })),
+          },
+        },
+      },
+    });
   }
 }
