@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@web/*": ["./apps/mashgin-web-app/*"],
       "@mashgin-take-home-gustavo/database": ["database/src/index.ts"],
       "@mashgin-take-home-gustavo/database-schema": [
         "database-schema/src/index.ts"
