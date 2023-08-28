@@ -11,23 +11,17 @@ export default function useCartItems() {
   function addOrUpdateCartItem({ id, quantity }: CartItem) {
     let newItems = [...items, { id, quantity }];
 
-    console.log(items.findIndex((item) => item.id === id));
-
     if (isItemOnCart(id)) {
       newItems = items.map((item) =>
         item.id === id ? { ...item, quantity } : item
       );
     }
 
-    console.log(newItems);
-
     setItems(newItems);
   }
 
   function removeCartItem(id: number) {
-    const index = items.findIndex((item) => item.id === id);
-
-    setItems(items.slice(index, 1));
+    setItems(items.filter((item) => item.id !== id));
   }
 
   return {

@@ -5,6 +5,7 @@
   "scripts": {
     "serve:app": "nx serve mashgin-web-app",
     "serve:services": "nx serve mashgin-services",
+    "test:app": "nx test mashgin-web-app",
     "database": "nx run database:prisma",
     "database:up": "nx run database:compose",
     "database:create-migration": "nx run database:create-migration",
@@ -50,6 +51,7 @@
     "@nx/webpack": "16.7.4",
     "@nx/workspace": "16.7.4",
     "@testing-library/react": "14.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^29.4.0",
     "@types/node": "18.14.2",
     "@types/react": "18.2.14",

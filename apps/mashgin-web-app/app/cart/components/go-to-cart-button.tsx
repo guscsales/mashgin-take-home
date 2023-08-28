@@ -1,8 +1,7 @@
 'use client';
 
 import { Button } from '@web/libs/components/button';
-import CircleSeparator from '@web/libs/components/circle-separator';
-import useCheckoutItems from '@web/app/cart/hooks/use-checkout-items';
+import useCheckoutItems from '@web/app/cart/hooks/use-cart-items';
 
 export default function GoToChartButton() {
   const { items } = useCheckoutItems();
